@@ -1,8 +1,8 @@
 money2020
 =========
-All examples below utilize curl to send transactions but feel free to use any application that is familiar to you:
+Accessing the MPS REST based API
 
-1. copy the following into a text file named:  json.txt
+1.  copy the following into a text file named:  json.txt
 
 {
 "InvoiceNo":"1",
@@ -18,12 +18,11 @@ All examples below utilize curl to send transactions but feel free to use any ap
 "OperatorID":"money2020",
 }
 
-
 2. execute this command:
 
 curl -k -v -X POST -H "Content-Type:application/json" -H "Authorization: Basic NDk0OTAxOnh5eg==" -d "@json.txt" -o output.txt https://w1.mercurycert.net/PaymentsAPI/Credit/Sale
 
-4.  Expected result:
+3. Expected result:
 
 {
   "ResponseOrigin": "Processor",
@@ -47,4 +46,4 @@ curl -k -v -X POST -H "Content-Type:application/json" -H "Authorization: Basic N
   "ProcessData": "|00|210100700000"
 }
 
-5. Note the api url will change depending on the transaction type (e.g. /Credit/Return will send a Credit Return txn).
+# Note the api url will change depending on the transaction type (e.g. /Credit/Return will send a Credit Return txn).
