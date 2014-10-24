@@ -17,4 +17,3 @@ A payment API can’t solve the world’s problems….or can it? Use one of Mercury’s 
 
 #PRIZE
 
-
