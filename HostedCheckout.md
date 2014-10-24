@@ -78,9 +78,9 @@ curl -k -v -X POST -H "Content-Type:text/xml;" -H 'SOAPAction:"http://www.mercur
 
 POST the PaymentID returned from the above request to the following URL and the Mercury hosted payments page will be displayed in the browser:  https://hc.mercurydev.net/Checkout.aspx
 
-### The customer will then enter their credit card information and press the submit button
+The customer will then enter their credit card information and press the submit button
 
-### HostedCheckout will then POST the results to the url sent in ProcessCompleteUrl of InitializePayment
+HostedCheckout will then POST the results to the url sent in ProcessCompleteUrl of InitializePayment
 
 ### Finally Call Verify Payment
 
