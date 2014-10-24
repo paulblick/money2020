@@ -7,7 +7,7 @@ We cannot wait to meet everyone and geek out on payment APIs at the Money 20/20 
 
 #Contact
 
-If you have any questions/comments leading up to the event please contact me at dourada at mercurypay dot com.  Or feel free to use the contact form at:  http://developer.mercurypay.com.
+If you have any questions/comments leading up to the event please contact me at dourada at mercurypay dot com.  Or feel free to use the phone number or contact form here:  http://developer.mercurypay.com/support-2/.
 
 #Challenge
 
