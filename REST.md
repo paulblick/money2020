@@ -3,6 +3,16 @@ money2020
 
 # REST API
 
+## Endpoint
+
+https://w1.mercurydev.net/ws/ws.asmx
+
+## Merchant Info
+
+MID: 003503902913105
+
+PWD: xyz
+
 ## Authentication
 
 Authentication occurs via HTTP Basic Auth using an HTTP authorization header.
