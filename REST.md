@@ -7,13 +7,17 @@ money2020
 
 https://w1.mercurycert.net/PaymentsAPI
 
-## Merchant Info
+## Merchant Info Clear Text
 
 MID: 003503902913105
 
 PWD: xyz
 
-## Authentication
+## Merchant Info E2E/MTOKEN
+
+MID: 019588466313922
+
+PWD: xyz
 
 Authentication occurs via HTTP Basic Auth using an HTTP authorization header.
 
@@ -31,7 +35,7 @@ Set Content-Type header value to: “application/json”
 
 All transactions are posted to https://w1.mercurycert.net/PaymentsAPI (for development and testing) followed by the transaction type at the end of the URL (referred to in this document as the Resource URL). For example, a credit sale would be: https://w1.mercurycert.net/PaymentsAPI/Credit/Sale
 
-## Example
+## Example E2E/Token
 
 ### Copy the following into a text file named:  json.txt
 
@@ -55,7 +59,7 @@ All transactions are posted to https://w1.mercurycert.net/PaymentsAPI (for devel
 ### execute this command:
 
 ```
-curl -k -v -X POST -H "Content-Type:application/json" -H "Authorization: Basic NDk0OTAxOnh5eg==" -d "@json.txt" -o output.txt https://w1.mercurycert.net/PaymentsAPI/Credit/Sale
+curl -k -v -X POST -H "Content-Type:application/json" -H "Authorization: Basic MDE5NTg4NDY2MzEzOTIyOnh5eg==" -d "@json.txt" -o output.txt https://w1.mercurycert.net/PaymentsAPI/Credit/Sale
 ```
 
 ### Expected result:
@@ -64,22 +68,74 @@ curl -k -v -X POST -H "Content-Type:application/json" -H "Authorization: Basic N
 {
   "ResponseOrigin": "Processor",
   "DSIXReturnCode": "000000",
-  "CmdStatus": "Declined",
-  "TextResponse": "DECLINE",
+  "CmdStatus": "Approved",
+  "TextResponse": "AP",
   "UserTraceData": "",
-  "MerchantID": "494901",
+  "MerchantID": "019588466313922",
+  "AcctNo": "400555XXXXXX0480",
+  "ExpDate": "XXXX",
+  "CardType": "VISA",
+  "TranCode": "Sale",
+  "AuthCode": "VI0100",
+  "CaptureStatus": "Captured",
+  "RefNo": "0004",
+  "InvoiceNo": "1",
+  "OperatorID": "money2020",
+  "Memo": "Team2 Money2020",
+  "Purchase": "1.00",
+  "Authorize": "1.00",
+  "AcqRefData": "aEb014297077004614cRBCAd5e00fJlA  m000005",
+  "RecordNo": "RFMWwCKXRt5USrQy0906aaiRuI7MkXBz4gUTEYZ61M0iEgUQCSIQB5FL",
+  "ProcessData": "|00|210100200000"
+}
+```
+
+## Example ClearText
+
+### Copy the following into a text file named:  json.txt
+
+```
+{
+"InvoiceNo":"1",
+"RefNo":"1",
+"Memo":"Team2 Money2020",
+"Purchase":"1.00",
+"AccountSource":"Swiped",
+"AcctNo":"5499990123456781",
+"ExpDate":"0816",
+"OperatorID":"money2020",
+}
+```
+
+### execute this command:
+
+```
+curl -k -v -X POST -H "Content-Type:application/json" -H "Authorization: Basic MDAzNTAzOTAyOTEzMTA1Onh5eg==" -d "@json.txt" -o output.txt https://w1.mercurycert.net/PaymentsAPI/Credit/Sale
+```
+
+### Expected result:
+
+```
+{
+  "ResponseOrigin": "Processor",
+  "DSIXReturnCode": "000000",
+  "CmdStatus": "Approved",
+  "TextResponse": "APROVED TEST CARD",
+  "UserTraceData": "",
+  "MerchantID": "003503902913105",
   "AcctNo": "549999XXXXXX6781",
   "ExpDate": "XXXX",
   "CardType": "M/C",
   "TranCode": "Sale",
+  "AuthCode": "999999",
+  "CaptureStatus": "Captured",
   "RefNo": "1",
   "InvoiceNo": "1",
-  "OperatorID": "test",
-  "Memo": "Team1 Money2020",
+  "OperatorID": "money2020",
+  "Memo": "Team2 Money2020",
   "Purchase": "1.00",
   "Authorize": "1.00",
   "AcqRefData": "K",
-  "RecordNo": "mlXYKwJzMlo19BDSGg6v5Mgj26Lb2ypZ00IFh9zkcMwiEgUQCSIQBxrI",
   "ProcessData": "|00|210100700000"
 }
 ```
