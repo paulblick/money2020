@@ -5,7 +5,7 @@ money2020
 
 ## Endpoint
 
-https://w1.mercurydev.net/ws/ws.asmx
+https://w1.mercurycert.net/PaymentsAPI
 
 ## Merchant Info
 
