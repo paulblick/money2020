@@ -317,11 +317,7 @@ This is receipt level detail that will be associated with the financial transact
 eyJpdGVtcyI6W3sibmFtZSI6InRlc3QxIiwicXVhbnRpdHkiOiIyIiwidW5pdFByaWNlIjoiMi4yMiJ9LHsibmFtZSI6InRlc3QyIiwicXVhbnRpdHkiOiIzIiwidW5pdFByaWNlIjoiMy4zMyJ9XX0=
 ````
 
-#### Add to <AdditionalData> element
-
-<AdditionalData>eyJpdGVtcyI6W3sibmFtZSI6InRlc3QxIiwicXVhbnRpdHkiOiIyIiwidW5pdFByaWNlIjoiMi4yMiJ9LHsibmFtZSI6InRlc3QyIiwicXVhbnRpdHkiOiIzIiwidW5pdFByaWNlIjoiMy4zMyJ9XX0=</AdditionalData>
-
-#### Copy into financial txn xml as below
+#### Copy into AdditionalData element in financial txn xml as below
 
 ### Copy this into mw.txt
 
