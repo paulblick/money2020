@@ -94,10 +94,6 @@ curl -k -v -X POST -H "Content-Type:text/xml;" -H 'SOAPAction:"http://www.mercur
 
 ## PayPal Example
 
-Data in EncryptedBlock is the customerId returned from the Customers request
-
-Data in EncryptedFormat shows that this is a PayPal txn
-
 ### Get list of Customers...copy the following into a text file named mw.txt
 
 ````
@@ -290,3 +286,79 @@ This shows us that the merchant is setup for both PayPal and WellsFargo wallets.
 ````
 {"mobileWallets":[{"MobileWalletInputType":"FOTO","MobileWalletType":"PayPal"},{"MobileWalletInputType":"QR","MobileWalletType":"WellsFargo"}]}
 ````
+
+## AdditionalData/Item Level Detail Example
+
+### Create Item Level Detail Data
+
+This is receipt level detail that will be associated with the financial transaction.
+
+#### Create the data in this format
+
+````
+{
+    "items":
+    [{
+        "name":"test1",
+        "quantity":"2",
+        "unitPrice":"2.22"
+    },
+    {
+        "name":"test2",
+        "quantity":"3",
+        "unitPrice":"3.33"
+    }]
+}
+````
+
+#### Encode the data
+
+````
+eyJpdGVtcyI6W3sibmFtZSI6InRlc3QxIiwicXVhbnRpdHkiOiIyIiwidW5pdFByaWNlIjoiMi4yMiJ9LHsibmFtZSI6InRlc3QyIiwicXVhbnRpdHkiOiIzIiwidW5pdFByaWNlIjoiMy4zMyJ9XX0=
+````
+
+#### Add to <AdditionalData> element
+
+<AdditionalData>eyJpdGVtcyI6W3sibmFtZSI6InRlc3QxIiwicXVhbnRpdHkiOiIyIiwidW5pdFByaWNlIjoiMi4yMiJ9LHsibmFtZSI6InRlc3QyIiwicXVhbnRpdHkiOiIzIiwidW5pdFByaWNlIjoiMy4zMyJ9XX0=</AdditionalData>
+
+#### Copy into financial txn xml as below
+
+### Copy this into mw.txt
+
+````
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://www.mercurypay.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:CreditTransaction>
+         <mer:tran><![CDATA[<?xml version="1.0"?>
+	<TStream>
+          <Transaction>
+          <MerchantID>111111187942001=MISMIS</MerchantID>
+          <OperatorID>test</OperatorID>
+          <TranType>Credit</TranType>
+          <TranCode>Sale</TranCode>
+          <Memo>Team1 money2020</Memo>
+          <InvoiceNo>123456</InvoiceNo>
+          <RefNo>123456</RefNo>
+		  <RecordNo>RecordNumberRequested</RecordNo>
+		  <Frequency>OneTime</Frequency>
+		  <AdditionalData>eyJpdGVtcyI6W3sibmFtZSI6InRlc3QxIiwicXVhbnRpdHkiOiIyIiwidW5pdFByaWNlIjoiMi4yMiJ9LHsibmFtZSI6InRlc3QyIiwicXVhbnRpdHkiOiIzIiwidW5pdFByaWNlIjoiMy4zMyJ9XX0=</AdditionalData>		  
+          <Amount>
+              <Purchase>2.26</Purchase>
+          </Amount>
+          <Account>
+		<EncryptedBlock>VUAN5TXPX4CYN</EncryptedBlock>
+		<EncryptedFormat>PayPal</EncryptedFormat>
+		<AccountSource>2dBarCode</AccountSource>
+          </Account>
+          </Transaction>
+        </TStream>]]></mer:tran>
+         <mer:pw>xyz</mer:pw>
+      </mer:CreditTransaction>
+   </soapenv:Body>
+</soapenv:Envelope>
+````
+
+###
+
+Send as above
