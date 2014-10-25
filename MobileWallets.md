@@ -355,6 +355,4 @@ eyJpdGVtcyI6W3sibmFtZSI6InRlc3QxIiwicXVhbnRpdHkiOiIyIiwidW5pdFByaWNlIjoiMi4yMiJ9
 </soapenv:Envelope>
 ````
 
-###
-
-Send as above
+### Send using same curl commands above
