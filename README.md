@@ -9,7 +9,7 @@ http://money2020.com/money2020-hackathon
 
 As you can see from the list above we have made our:  HostedCheckout, MobileWallets, REST, and SOAP integrations available to you for your hacking pleasure.
 
-REST/SOAP are a transmission mechanism but specifically open up access to our Credit, Debit, EBT, PrePaid products.
+REST/SOAP are a transmission mechanism but specifically provide access to our Credit, Debit, EBT, PrePaid products.
 
 #Contact
 
