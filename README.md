@@ -5,6 +5,10 @@ money2020
 
 We cannot wait to meet everyone and geek out on payment APIs at the Money 20/20 Hackathon November 1st and 2nd.  This repo is to provide you a quickstart to integrating to Mercury APIs.
 
+As you can see from the list above we have made our:  HostedCheckout, MobileWallets, REST, and SOAP integrations available to you for your hacking pleasure.
+
+REST/SOAP are a transmission mechanism but specifically open up access to our Credit, Debit, EBT, PrePaid products.
+
 #Contact
 
 If you have any questions/comments leading up to the event please contact me at dourada at mercurypay dot com.  Or feel free to use the phone number or contact form here:  http://developer.mercurypay.com/support-2/.
