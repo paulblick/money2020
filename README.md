@@ -23,7 +23,9 @@ A payment API can’t solve the world’s problems….or can it? Use one of Mercury’s 
 
 #PRIZE
 
-Coming soon!
+1.	A trip valued at $5,000k to the Mercury headquarters in Durango, Colorado including a trip to ski country in Telluride. Value of the trip to include airfare and hotel.
+2.	One iPad® for each member of the winning team (maximum five members).
+
 
 #Samples in this repo
 
