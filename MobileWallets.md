@@ -29,7 +29,7 @@ Check in Merchant:  Cert Merchant1 MIS
  
 ## Process
 
-1.  Customer checkes in using PayPal mobile wallet and/or generates QR code with Wells Fargo wallet.
+1.  Customer checks in using PayPal mobile wallet and/or generates QR code with Wells Fargo wallet.
 
 2.  Customer is ready to pay for goods/services and requests to pay via PayPal or Wells Fargo
 
