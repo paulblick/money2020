@@ -17,6 +17,8 @@ A payment API can’t solve the world’s problems….or can it? Use one of Mercury’s 
 
 #PRIZE
 
+Coming soon!
+
 #Samples in this repo
 
 We use curl to facilitate transaction processing in this repo as it is a simple utility and easily installed (if not installed by default).  But have a look around at our sample code and you will start to see an infinite number of ways to send transactions to the Mercury platform.
