@@ -2,8 +2,6 @@
 
 http://money2020.com/money2020-hackathon
 
-=========
-
 #Overview
 
 We cannot wait to meet everyone and geek out on payment APIs at the Money 20/20 Hackathon November 1st and 2nd.  This repo is to provide you a quickstart to integrating to Mercury APIs.
